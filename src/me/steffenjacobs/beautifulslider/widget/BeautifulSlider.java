@@ -83,6 +83,22 @@ public class BeautifulSlider extends Composite {
 		divEventListener.removeEventHandler(handler);
 	}
 
+	public void setWidth(int width) {
+		final double pos = getPosition();
+		divBox.getStyle().setWidth(width, Unit.PX);
+		divLeft.getStyle().setProperty("maxWidth", width + "px");
+		setPosition(pos);
+	}
+
+	public void setHeight(int height) {
+		divBox.getStyle().setHeight(height, Unit.PX);
+		divLeft.getStyle().setHeight(height, Unit.PX);
+	}
+	
+	public void setBarColor(String color){
+		divLeft.getStyle().setBackgroundColor(color);
+	}
+
 	private class SlideAnimation extends Animation {
 		private final Element element;
 		private final double targetWidth;

@@ -53,6 +53,9 @@ public class BeautifulSliderExample implements EntryPoint {
 			}
 		};
 		slider.addEventHandler(debugHandler);
+		slider.setWidth(500);
+		slider.setHeight(10);
+		slider.setBarColor("#e2ffb7");
 
 	}
 }
