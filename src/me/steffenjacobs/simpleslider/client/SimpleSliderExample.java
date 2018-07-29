@@ -1,7 +1,4 @@
-package me.steffenjacobs.beautifulslider.client;
-
-import me.steffenjacobs.beautifulslider.widget.BeautifulSlider;
-import me.steffenjacobs.beautifulslider.widget.SliderEventHandler;
+package me.steffenjacobs.simpleslider.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -11,13 +8,16 @@ import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 
-public class BeautifulSliderExample implements EntryPoint {
+import me.steffenjacobs.simpleslider.widget.SimpleSlider;
+import me.steffenjacobs.simpleslider.widget.SliderEventHandler;
+
+public class SimpleSliderExample implements EntryPoint {
 	private static final NumberFormat nf = NumberFormat.getFormat("#0.00");
 
 	public void onModuleLoad() {
 
 		// create a slider and add it to the root panel
-		final BeautifulSlider slider = new BeautifulSlider();
+		final SimpleSlider slider = new SimpleSlider();
 		RootPanel.get("sliderDiv").add(slider);
 
 		final Label lab = new Label("33.00%");

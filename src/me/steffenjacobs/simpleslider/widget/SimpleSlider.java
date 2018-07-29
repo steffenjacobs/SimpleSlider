@@ -1,4 +1,4 @@
-package me.steffenjacobs.beautifulslider.widget;
+package me.steffenjacobs.simpleslider.widget;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,11 +18,11 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
 /** @author Steffen Jacobs */
-public class BeautifulSlider extends Composite {
+public class SimpleSlider extends Composite {
 
 	private static BeautifulSliderUiBinder uiBinder = GWT.create(BeautifulSliderUiBinder.class);
 
-	interface BeautifulSliderUiBinder extends UiBinder<Widget, BeautifulSlider> {
+	interface BeautifulSliderUiBinder extends UiBinder<Widget, SimpleSlider> {
 	}
 
 	@UiField
@@ -32,7 +32,7 @@ public class BeautifulSlider extends Composite {
 
 	final BeautifulSliderEventListener divEventListener;
 
-	public BeautifulSlider() {
+	public SimpleSlider() {
 		initWidget(uiBinder.createAndBindUi(this));
 
 		final SliderEventHandler graphicsHandler = new SliderEventHandler() {

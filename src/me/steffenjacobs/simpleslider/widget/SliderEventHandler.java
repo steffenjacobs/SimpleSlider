@@ -1,4 +1,4 @@
-package me.steffenjacobs.beautifulslider.widget;
+package me.steffenjacobs.simpleslider.widget;
 
 import com.google.gwt.dom.client.NativeEvent;
 

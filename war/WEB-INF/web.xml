@@ -6,7 +6,7 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <welcome-file-list>
-    <welcome-file>GWT_Beautiful_Slider.html</welcome-file>
+    <welcome-file>SimpleSlider.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
