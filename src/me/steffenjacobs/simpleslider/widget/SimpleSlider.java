@@ -30,6 +30,8 @@ public class SimpleSlider extends Composite {
 	@UiField
 	DivElement divLeft;
 
+	private double position = 0;
+
 	final BeautifulSliderEventListener divEventListener;
 
 	public SimpleSlider() {
@@ -68,11 +70,12 @@ public class SimpleSlider extends Composite {
 	public void setPosition(double percent) {
 		percent = percent < 0 ? 0 : percent > 100 ? 100 : percent;
 		divLeft.getStyle().setWidth(divBox.getOffsetWidth() * (percent / 100), Unit.PX);
+		position = percent;
 	}
 
 	/** @return the value of the slider between 0 and 100 */
 	public double getPosition() {
-		return ((double) divLeft.getClientWidth() / divBox.getClientWidth()) * 100;
+		return position;
 	}
 
 	/** add an event handler for SliderEvents */
@@ -85,10 +88,9 @@ public class SimpleSlider extends Composite {
 	}
 
 	public void setWidth(int width) {
-		final double pos = getPosition();
 		divBox.getStyle().setWidth(width, Unit.PX);
 		divLeft.getStyle().setProperty("maxWidth", width + "px");
-		setPosition(pos);
+		setPosition(position);
 	}
 
 	public void setHeight(int height) {
@@ -106,6 +108,7 @@ public class SimpleSlider extends Composite {
 		private final double startWidth;
 
 		public SlideAnimation(Element element, double targetWidth) {
+			position = 100 * targetWidth / divBox.getClientWidth();
 			this.element = element;
 			this.targetWidth = targetWidth;
 			this.startWidth = element.getClientWidth();
