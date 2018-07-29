@@ -66,6 +66,7 @@ public class BeautifulSlider extends Composite {
 	 *            percentage between 0 and 100
 	 */
 	public void setPosition(double percent) {
+		percent = percent < 0 ? 0 : percent > 100 ? 100 : percent;
 		divLeft.getStyle().setWidth(divBox.getOffsetWidth() * (percent / 100), Unit.PX);
 	}
 
@@ -94,8 +95,8 @@ public class BeautifulSlider extends Composite {
 		divBox.getStyle().setHeight(height, Unit.PX);
 		divLeft.getStyle().setHeight(height, Unit.PX);
 	}
-	
-	public void setBarColor(String color){
+
+	public void setBarColor(String color) {
 		divLeft.getStyle().setBackgroundColor(color);
 	}
 
