@@ -20,6 +20,7 @@ public class SimpleSliderExample implements EntryPoint {
 		final SimpleSlider slider = new SimpleSlider();
 		RootPanel.get("sliderDiv").add(slider);
 
+		// add a label to show the position of the slider
 		final Label lab = new Label("33.00%");
 		RootPanel.get("sliderDiv").add(lab);
 
@@ -53,9 +54,10 @@ public class SimpleSliderExample implements EntryPoint {
 			}
 		};
 		slider.addEventHandler(debugHandler);
+
+		// set some properties of thes slider
 		slider.setWidth(500);
 		slider.setHeight(10);
 		slider.setBarColor("#e2ffb7");
-
 	}
 }
