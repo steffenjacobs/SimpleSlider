@@ -22,8 +22,6 @@ public class BeautifulSlider extends Composite {
 
 	private static BeautifulSliderUiBinder uiBinder = GWT.create(BeautifulSliderUiBinder.class);
 
-	
-
 	interface BeautifulSliderUiBinder extends UiBinder<Widget, BeautifulSlider> {
 	}
 
@@ -31,7 +29,7 @@ public class BeautifulSlider extends Composite {
 	DivElement divBox;
 	@UiField
 	DivElement divLeft;
-	
+
 	final BeautifulSliderEventListener divEventListener;
 
 	public BeautifulSlider() {
@@ -61,18 +59,30 @@ public class BeautifulSlider extends Composite {
 		DOM.setEventListener(divBox, divEventListener);
 	}
 
+	/**
+	 * sets the position of the slider to <i>percent</i>
+	 * 
+	 * @param percent
+	 *            percentage between 0 and 100
+	 */
 	public void setPosition(double percent) {
 		divLeft.getStyle().setWidth(divBox.getOffsetWidth() * (percent / 100), Unit.PX);
 	}
 
+	/** @return the value of the slider between 0 and 100 */
 	public double getPosition() {
 		return ((double) divLeft.getClientWidth() / divBox.getClientWidth()) * 100;
 	}
 
-	public void addEventHandler(SliderEventHandler listener) {
-		divEventListener.addEventHandler(listener);
+	/** add an event handler for SliderEvents */
+	public void addEventHandler(SliderEventHandler handler) {
+		divEventListener.addEventHandler(handler);
 	}
-	
+
+	public void removeEventHandler(SliderEventHandler handler) {
+		divEventListener.removeEventHandler(handler);
+	}
+
 	private class SlideAnimation extends Animation {
 		private final Element element;
 		private final double targetWidth;
@@ -163,6 +173,10 @@ public class BeautifulSlider extends Composite {
 
 		public void addEventHandler(SliderEventHandler handler) {
 			handlers.add(handler);
+		}
+
+		public void removeEventHandler(SliderEventHandler handler) {
+			handlers.remove(handler);
 		}
 	}
 
