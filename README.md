@@ -1,7 +1,7 @@
 # SimpleSlider
 A simple Slider implemented in native GWT with divs. It supports setting the position, adding/removing event handlers, setting size and changing the bar color.
 
-##Screenshot
+## Screenshot
 This is how the slider looks like:
 
 ![Slider Image](./slider.gif?raw=true "The Simple Slider")
